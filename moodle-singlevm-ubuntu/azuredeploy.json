@@ -80,7 +80,7 @@
     "newStorageAccountName": "[concat(uniquestring(resourceGroup().id), 'mds')]",
     "imagePublisher": "Canonical",
     "imageOffer": "UbuntuServer",
-    "ubuntuOSVersion": "14.04.2-LTS",
+    "ubuntuOSVersion": "14.04-LTS",
     "OSDiskName": "[concat(parameters('uniqueNamePrefix'),'Disk')]",
     "nicName": "[concat(parameters('uniqueNamePrefix'),'Nic')]",
     "addressPrefix": "10.0.0.0/16",
@@ -95,7 +95,7 @@
     "vnetID": "[resourceId('Microsoft.Network/virtualNetworks',variables('virtualNetworkName'))]",
     "subnetRef": "[concat(variables('vnetID'),'/subnets/',variables('subnetName'))]",
     "installScriptName": "install_lamp_moodle.sh",
-    "installScriptUri": "[concat('https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/moodle-singlevm-ubuntu/', variables('installScriptName'))]",
+    "installScriptUri": "[concat('https://raw.githubusercontent.com/michelauger/azure-quickstart-templates/master/moodle-singlevm-ubuntu/', variables('installScriptName'))]",
     "installCommand": "[concat('sh ', variables('installScriptName'), ' ', parameters('mySqlPassword'), ' ', parameters('moodleVersion'), ' ', parameters('installOfficePlugins'))]",
     "apiVersion": "2015-06-15"
   },
